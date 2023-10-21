@@ -9,10 +9,18 @@ public class ActivateAttack : MonoBehaviour
     [SerializeField] private Transform _playerTransform;
     private void Update()
     {
+
         for (int i = 0; i < objectToActivate.Count; i++)
         {
+            if (objectToActivate[i] == null)
+            {
+                objectToActivate.RemoveAt(i);
+                continue;
+            }
+
             objectToActivate[i].CheckDistance(_playerTransform.position);
         }
+
     }
 
     public void AddObjectToActivate(ActivateByDistance activateByDistance)

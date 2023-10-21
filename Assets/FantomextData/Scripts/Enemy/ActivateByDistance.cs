@@ -22,12 +22,21 @@ public class ActivateByDistance : MonoBehaviour
         {
             Activate(playerPosition);
         }
+        else
+        {
+            Deactive();
+        }
 
     }
 
     public void Activate(Vector3 playerPosition)
     {
         gameObject.GetComponent<Enemy>().Attack(playerPosition);
+    }
+
+    public void Deactive()
+    {
+        gameObject.GetComponent<Enemy>().BackPatrul();
     }
 
 

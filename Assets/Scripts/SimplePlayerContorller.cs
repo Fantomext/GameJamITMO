@@ -32,7 +32,7 @@ public class SimplePlayerContorller : MonoBehaviour
 
     public float wheelRotationSpeed = 360f;
 
-  
+    [SerializeField] private float _friction;
 
 
     void Start()
@@ -47,7 +47,6 @@ public class SimplePlayerContorller : MonoBehaviour
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
 
-        //currentAcceleration = speed;
         if (Input.GetKey(KeyCode.LeftShift) && havePils)
         {
             isNitro = true;
@@ -89,6 +88,7 @@ public class SimplePlayerContorller : MonoBehaviour
         rb.AddForce(forwardForce, ForceMode.Acceleration);
         rb.MoveRotation(rb.rotation * turnRotation);
 
+        rb.AddForce(-rb.velocity.x * _friction, 0f, 0f);
 
         //if (rb.velocity.magnitude > maxSpeed)
         //{

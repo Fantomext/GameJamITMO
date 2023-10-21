@@ -16,6 +16,7 @@ public class CameraFollow : MonoBehaviour
 
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         Vector3 angles = transform.eulerAngles;
         x = angles.y;
         y = angles.x;
@@ -25,13 +26,12 @@ public class CameraFollow : MonoBehaviour
     {
         if (target)
         {
-            if (Input.GetMouseButton(1))
-            {
+            
                 x += Input.GetAxis("Mouse X") * xSpeed * 0.02f;
                 y -= Input.GetAxis("Mouse Y") * ySpeed * 0.02f;
 
                 y = ClampAngle(y, yMinLimit, yMaxLimit);
-            }
+            
 
             Quaternion rotation = Quaternion.Euler(y, x, 0);
             Vector3 position = rotation * new Vector3(0.0f, 0.0f, -distance) + target.position;

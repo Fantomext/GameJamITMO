@@ -11,16 +11,13 @@ enum EnemyState
 
 public class Enemy : MonoBehaviour
 {
-    
-
-
     [SerializeField] float _speed = 15f;
     [SerializeField] private Rigidbody _rigibody;
 
     [SerializeField] List<Transform> wayPoints = new List<Transform>();
     [SerializeField] int index = 0;
 
-    EnemyState state;
+    [SerializeField] private EnemyState state;
 
     private void Start()
     {
@@ -52,7 +49,6 @@ public class Enemy : MonoBehaviour
         }
         if (state == EnemyState.chase)
         {
-
         }
         
         
@@ -66,14 +62,36 @@ public class Enemy : MonoBehaviour
     public void Attack(Vector3 playerPosition)
     {
         Debug.Log("attack");
-
-        transform.LookAt(playerPosition);
         EnemyAttackState();
+        transform.LookAt(playerPosition);
 
+    }
+
+    public void BackPatrul()
+    {
+        state = EnemyState.patrul;
+    }
+
+    public bool IsAttack()
+    {
+        if (state == EnemyState.attack)
+        {
+            return true;
+        }
+        else { return false; }
     }
 
     public void EnemyAttackState()
     {
         state = EnemyState.attack;
+    }
+    public void EnemyPatrulState()
+    {
+        state = EnemyState.patrul;
+    }
+
+    public void EnemyChaseState()
+    {
+        state = EnemyState.chase;
     }
 }

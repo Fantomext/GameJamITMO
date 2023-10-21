@@ -8,16 +8,20 @@ public class SetTriggerEveryNSeconds : MonoBehaviour
 
     [SerializeField] private Animator _animator;
     [SerializeField] private float _attackPeriod = 7f;
+    [SerializeField] private Enemy _enemy;
     private float _timer = 0;
 
-    // Update is called once per frame
     void Update()
     {
-        _timer += Time.deltaTime;
-        if (_timer > _attackPeriod)
+        if (_enemy.IsAttack())
         {
-            _timer = 0;
-            _animator.SetTrigger(_attack);
+            _timer += Time.deltaTime;
+            if (_timer > _attackPeriod)
+            {
+                _timer = 0;
+                _animator.SetTrigger(_attack);
+            }
         }
+            
     }
 }

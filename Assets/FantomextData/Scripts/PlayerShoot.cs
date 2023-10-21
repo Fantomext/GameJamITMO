@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerShoot : MonoBehaviour
 {
     [SerializeField] Transform _bulletSpawn;
+    [SerializeField] private GameObject _mainCamera;
     [SerializeField] BrainBullet _bullet;
     [SerializeField] private bool _isFire = false;
     float timer = 0;
@@ -12,7 +13,7 @@ public class PlayerShoot : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetMouseButton(0))
         {
             _isFire = true;
         }
@@ -38,7 +39,12 @@ public class PlayerShoot : MonoBehaviour
 
     public void Shoot()
     {
-        var _bulletPrefab = Instantiate(_bullet,_bulletSpawn.transform.position, _bulletSpawn.rotation);
-        _bulletPrefab.SetPowerbullet(_bulletPrefab.transform.forward);
+        RaycastHit hit;
+
+        if (Physics.Raycast(_bulletSpawn.transform.position, _mainCamera.transform.forward, out hit))
+        {
+            var _bulletPrefab = Instantiate(_bullet, _bulletSpawn.transform.position, _bulletSpawn.rotation);
+            _bulletPrefab.SetPowerbullet(_mainCamera.transform.forward);
+        }
     }
 }

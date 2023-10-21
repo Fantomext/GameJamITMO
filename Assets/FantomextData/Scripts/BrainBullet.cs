@@ -7,6 +7,11 @@ public class BrainBullet : MonoBehaviour
     [SerializeField] private float _bulletSpeed = 10f;
     [SerializeField] Rigidbody _rigibody;
 
+    private void Start()
+    {
+        Destroy(gameObject, 5f);
+    }
+
     public void SetPowerbullet(Vector3 direction)
     {
         _rigibody.AddForce(direction * _bulletSpeed);

@@ -6,6 +6,7 @@ using UnityEngine.Rendering;
 public class TimeManager : MonoBehaviour
 {
     [SerializeField] float time = 5f;
+    [SerializeField] 
 
 
     // Update is called once per frame

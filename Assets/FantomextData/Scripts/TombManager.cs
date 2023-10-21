@@ -6,7 +6,8 @@ public class TombManager : MonoBehaviour
 {
     [SerializeField] List<Necropolis> necropolisList = new List<Necropolis>();
     [SerializeField] TimeManager timeManager;
-    int index = 0;
+    [SerializeField]int index = 0;
+    [SerializeField] ArrowLook _arrow;
 
     private void Start()
     {
@@ -20,18 +21,19 @@ public class TombManager : MonoBehaviour
         int randomValue = Random.Range(0, necropolisList.Count);
         if (randomValue == index)   
         {
-            index = randomValue++;
+            index = randomValue + 1;
         }
         else
         {
             index = randomValue;
         }
-        if (index > necropolisList.Count)
+        if (index > necropolisList.Count - 1)
         {
             index = 0;
         }
 
         necropolisList[index].SetActiveNecropolis();
+        _arrow.SetTarget(necropolisList[index].GetCoordinates());
         timeManager.AddTime(10);
 
     }
