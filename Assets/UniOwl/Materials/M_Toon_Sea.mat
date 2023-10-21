@@ -115,6 +115,9 @@ Material:
     - _Edge2: 0.01
     - _EnvironmentReflections: 1
     - _Float: 0
+    - _FoamAmount: 3
+    - _FoamEdge1: 0.01
+    - _FoamEdge2: 0.1
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
