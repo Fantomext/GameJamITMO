@@ -6,13 +6,14 @@ using UnityEngine.Rendering;
 public class TimeManager : MonoBehaviour
 {
     [SerializeField] float time = 5f;
-    [SerializeField] 
+    [SerializeField] private InterfaceUI interfaceUI;
 
 
     // Update is called once per frame
     void Update()
     {
         time -= Time.deltaTime;
+        interfaceUI.ChangeTimerText(time);
         if (time < 0)
         {
             Die();

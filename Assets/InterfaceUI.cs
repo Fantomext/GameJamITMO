@@ -26,9 +26,9 @@ public class InterfaceUI : MonoBehaviour
     {
         brainText.text = value;
     }
-    public void ChangeTimerText(string value)
+    public void ChangeTimerText(float value)
     {
-        timer.text = value;
+        timer.text = value.ToString();
     }
     public void ChangeDeliveryCountText(string value)
     {
