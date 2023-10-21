@@ -9,6 +9,9 @@ public class PlayerAttack : MonoBehaviour
     public int attackDamage = 10;
     public LayerMask enemyLayer;
 
+    public AudioSource batMissSource;
+    public AudioSource batAttackSource;
+
     private void Update()
     {
         if (Input.GetMouseButton(1))
@@ -28,6 +31,11 @@ public class PlayerAttack : MonoBehaviour
             if (collider.attachedRigidbody.gameObject.TryGetComponent<EnemyHealth>(out var enemy))
             {
                 enemy.TakeDamage(1);
+                batAttackSource.Play();
+            }
+            else
+            {
+                batMissSource.Play();
             }
 
             //var damagable = hit.collider.GetComponent<IDamagable>();
@@ -36,6 +44,8 @@ public class PlayerAttack : MonoBehaviour
             //    damagable.TakeDamage(attackDamage);
             //}
         }
+        else
+            batMissSource.Play();
     }
 
     private void OnDrawGizmosSelected()
