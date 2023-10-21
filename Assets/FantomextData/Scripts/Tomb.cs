@@ -7,13 +7,17 @@ public class Tomb : MonoBehaviour
     [SerializeField] private bool _isActive = false;
     [SerializeField] GameObject _hand;
     Color _color;
-   
+
+    [SerializeField]
+    private AudioSource onHitSource;
+
     private void OnCollisionEnter(Collision collision)
     {
         if (_isActive)
         {
             if (collision.rigidbody.gameObject.TryGetComponent<BrainBullet>(out var brainBullet))
             {
+                onHitSource.Play();
                 brainBullet.Hit();
                 transform.parent.GetComponent<Necropolis>().DeliverySuccess();
             }
