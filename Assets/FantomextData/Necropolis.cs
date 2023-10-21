@@ -34,4 +34,8 @@ public class Necropolis : MonoBehaviour
         DeactivateNecrolopis();
         tombManager.RandomNecropolis();
     }
+
+    public void SetColor(Color color)
+    {
+    }
 }

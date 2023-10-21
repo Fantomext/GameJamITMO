@@ -21,7 +21,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Pine_Leaves
-  m_Shader: {fileID: -6465566751694194690, guid: b88e81b4899f33448868f1a6c118d451, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: b88e81b4899f33448868f1a6c118d451,
+    type: 3}
   m_Parent: {fileID: 2100000, guid: 3117d1d4c38c7bc46bc7acc129012c87, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
@@ -42,7 +43,8 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Ints: []
-    m_Floats: []
+    m_Floats:
+    - _Smoothness: 1
     m_Colors:
     - _Main_Color: {r: 0.16862746, g: 0.49803922, b: 0.43137255, a: 0}
   m_BuildTextureStacks: []

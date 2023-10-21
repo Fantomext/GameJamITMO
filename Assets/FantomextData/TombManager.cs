@@ -5,6 +5,7 @@ using UnityEngine;
 public class TombManager : MonoBehaviour
 {
     [SerializeField] List<Necropolis> necropolisList = new List<Necropolis>();
+    [SerializeField] TimeManager timeManager;
     int index = 0;
 
     private void Start()
@@ -31,6 +32,7 @@ public class TombManager : MonoBehaviour
         }
 
         necropolisList[index].SetActiveNecropolis();
+        timeManager.AddTime(10);
 
     }
 }
