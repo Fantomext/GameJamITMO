@@ -16,6 +16,11 @@ public class SpeedSystem : MonoBehaviour
     [SerializeField]
     private float walkFOV, runFOV;
 
+    [SerializeField]
+    private Rigidbody target;
+    [SerializeField]
+    private float maxVelocity;
+
     private void Awake()
     {
         shaker = vCam.GetCinemachineComponent<Cinemachine.CinemachineBasicMultiChannelPerlin>();
@@ -23,6 +28,7 @@ public class SpeedSystem : MonoBehaviour
 
     private void Update()
     {
+        strength = Mathf.Clamp01(target.velocity.magnitude / maxVelocity);
         rls.strength = strength;
         shaker.m_AmplitudeGain = strength;
         vCam.m_Lens.FieldOfView = Mathf.Lerp(walkFOV, runFOV, strength);
