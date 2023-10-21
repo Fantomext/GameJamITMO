@@ -1,13 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 public class TimeManager : MonoBehaviour
 {
     [SerializeField] float time = 5f;
     [SerializeField] private InterfaceUI interfaceUI;
-
 
     // Update is called once per frame
     void Update()

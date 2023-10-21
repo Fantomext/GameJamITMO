@@ -14,9 +14,11 @@ public class SimplePlayerContorller : MonoBehaviour
     public LayerMask groundLayer;
     public LayerMask gazonLayerMask;
 
+    public float speedReload;
+    public float nitroAmount = 1f;
+
     public Transform raycast;
     
-
     public Transform frontWheel;
     public Transform backWheel;
     public Transform ryl;
@@ -47,11 +49,9 @@ public class SimplePlayerContorller : MonoBehaviour
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
 
-        if (Input.GetKey(KeyCode.LeftShift) && havePils)
+        if (Input.GetKey(KeyCode.LeftShift))
         {
             isNitro = true;
-            havePils = false;
-
         }
     }
 
@@ -66,12 +66,7 @@ public class SimplePlayerContorller : MonoBehaviour
 
         ApplyVisualRotation(moveHorizontal);
 
-
         currentAcceleration = isGazon? gazonSpeed : speed;
-
-
-
-
 
         Vector3 forwardForce = transform.forward * moveVertical * currentAcceleration;
         float turnAngle = moveHorizontal * steering * Time.fixedDeltaTime;
@@ -89,6 +84,8 @@ public class SimplePlayerContorller : MonoBehaviour
         rb.MoveRotation(rb.rotation * turnRotation);
 
         rb.AddForce(-rb.velocity.x * _friction, 0f, 0f);
+
+        rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
 
         //if (rb.velocity.magnitude > maxSpeed)
         //{
@@ -117,12 +114,6 @@ public class SimplePlayerContorller : MonoBehaviour
         backWheel.Rotate(Vector3.forward, rotationAngle);
     }
 
-
-
-  
-
-    
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Pils"))
@@ -131,10 +122,6 @@ public class SimplePlayerContorller : MonoBehaviour
         }
 
     }
-
-
-
-
 }
 
 

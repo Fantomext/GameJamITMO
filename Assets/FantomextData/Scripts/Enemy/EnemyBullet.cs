@@ -20,4 +20,11 @@ public class EnemyBullet : MonoBehaviour
 
         Destroy(gameObject, 5f);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.TryGetComponent(out PlayerHealth health))
+            health.TakeDamage(1);
+        Destroy(gameObject);
+    }
 }

@@ -8,8 +8,18 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] private GameObject _mainCamera;
     [SerializeField] BrainBullet _bullet;
     [SerializeField] private bool _isFire = false;
+    [SerializeField]
+    private InterfaceUI interfaceUI;
+
     float timer = 0;
 
+    [SerializeField]
+    private int ammo = 10;
+
+    private void Start()
+    {
+        interfaceUI.ChangeBrainText(ammo);
+    }
 
     private void Update()
     {
@@ -25,7 +35,7 @@ public class PlayerShoot : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (_isFire)
+        if (_isFire && ammo > 0)
         {
             timer += Time.deltaTime;
             if (timer > 0.2f)
@@ -39,12 +49,14 @@ public class PlayerShoot : MonoBehaviour
 
     public void Shoot()
     {
+        ammo--;
         RaycastHit hit;
 
         if (Physics.Raycast(_bulletSpawn.transform.position, _mainCamera.transform.forward, out hit))
         {
             var _bulletPrefab = Instantiate(_bullet, _bulletSpawn.transform.position, _bulletSpawn.rotation);
             _bulletPrefab.SetPowerbullet(_mainCamera.transform.forward);
+            interfaceUI.ChangeBrainText(ammo);
         }
     }
 }

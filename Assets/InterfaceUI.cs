@@ -6,32 +6,48 @@ using UnityEngine.UI;
 
 public class InterfaceUI : MonoBehaviour
 {
+    [SerializeField]
     Image hpBar;
+    [SerializeField]
     Image energyBar;
+    [SerializeField]
     TMP_Text brainText;
+    [SerializeField]
     TMP_Text timer;
+    [SerializeField]
     TMP_Text successDelivery;
 
-    public void ChangeHpBar(int value)
+    [SerializeField]
+    private Color noResourceColor;
+
+    public void ChangeHpBar(int current, int max)
     {
-        hpBar.fillAmount = hpBar.fillAmount + value;
+        float percent = (float)current / max;
+        hpBar.fillAmount = percent;
     }
 
     public void ChangeEnergyBar(int value)
     {
-        energyBar.fillAmount = energyBar.fillAmount + value;
+        energyBar.fillAmount = value;
     }
 
-    public void ChangeBrainText(string value)
+    public void ChangeBrainText(int value)
     {
-        brainText.text = value;
+        brainText.text = value.ToString();
+
+        if (value == 0)
+            brainText.color = noResourceColor;
     }
     public void ChangeTimerText(float value)
     {
-        timer.text = value.ToString();
+        int seconds = (int)value;
+        int mins = seconds / 60;
+        int secsElapsed = seconds % 60;
+
+        timer.text = $"{mins:00}:{secsElapsed:00}";
     }
-    public void ChangeDeliveryCountText(string value)
+    public void ChangeDeliveryCountText(int value)
     {
-        successDelivery.text = value;
+        successDelivery.text = value.ToString();
     }
 }
