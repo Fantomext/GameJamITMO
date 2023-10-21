@@ -40,8 +40,5 @@ public class ActivateByDistance : MonoBehaviour
     }
 
 
-    private void OnDrawGizmosSelected()
-    {
-        Handles.DrawWireDisc(transform.position, Vector3.forward, _distanceToActivate);
-    }
+ 
 }
