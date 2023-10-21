@@ -114,7 +114,7 @@ Material:
     - _DstBlendAlpha: 0
     - _Edge1: 0
     - _Edge2: 4
-    - _EmissionPower: 8.52
+    - _EmissionPower: 4
     - _EnvironmentReflections: 1
     - _Fresnel_Factor: 261.54
     - _Fresnel_Power: 1

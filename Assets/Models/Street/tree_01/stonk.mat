@@ -30,7 +30,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Main_Map:
-        m_Texture: {fileID: 2800000, guid: 2e50a7a0297fca047acb3ccde564d1d7, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
@@ -38,7 +38,7 @@ Material:
     - _Edge1: 0
     - _Edge2: 0
     m_Colors:
-    - _Main_Color: {r: 1, g: 1, b: 1, a: 0}
+    - _Main_Color: {r: 0.21274044, g: 0.3962264, b: 0.18129228, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &2535625278489917321
 MonoBehaviour:
