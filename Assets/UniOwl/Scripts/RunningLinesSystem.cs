@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class RunningLinesSystem : MonoBehaviour
 {
@@ -18,8 +17,7 @@ public class RunningLinesSystem : MonoBehaviour
 
     private RunningLine[] lines;
 
-    [Range(0f, 1f)]
-    public float strength;
+    public float strength = 0f;
 
     private void Awake()
     {
@@ -38,16 +36,24 @@ public class RunningLinesSystem : MonoBehaviour
 
             lines[i] = line;
 
-            var onParentEdge = parent.sizeDelta * direction;
             float angle = Vector2.SignedAngle(Vector2.down, direction * 2f);
 
             var rectTr = line.transform as RectTransform;
-            rectTr.anchoredPosition = onParentEdge;
             rectTr.rotation = Quaternion.Euler(0f, 0f, angle);
 
             var color = line.image.color;
             color.a *= Random.value;
             line.image.color = color;
+        }
+    }
+
+    private void Start()
+    {
+        for (int i = 0; i < numLines; i++)
+        {
+            var line = lines[i];
+            var rectTr = line.transform as RectTransform;
+            rectTr.anchoredPosition = parent.sizeDelta * line.direction * 4f;
         }
     }
 
@@ -60,7 +66,9 @@ public class RunningLinesSystem : MonoBehaviour
 
             float distance = Mathf.PingPong(Time.time * speed + line.offset, line.fromDistance - line.toDistance) + line.toDistance;
             float farDistance = 4f;
-            rectTr.anchoredPosition = parent.sizeDelta * line.direction * Mathf.Lerp(farDistance, distance, strength);
+
+            float t = Mathf.Lerp(farDistance, distance, strength);
+            rectTr.anchoredPosition = parent.sizeDelta * line.direction * t;
         }
     }
 }
