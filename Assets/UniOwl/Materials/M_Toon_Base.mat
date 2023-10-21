@@ -21,7 +21,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Toon_Base
-  m_Shader: {fileID: -6465566751694194690, guid: b88e81b4899f33448868f1a6c118d451, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: b88e81b4899f33448868f1a6c118d451,
+    type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
