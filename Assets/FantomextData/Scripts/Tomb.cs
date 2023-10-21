@@ -5,11 +5,9 @@ using UnityEngine;
 public class Tomb : MonoBehaviour
 {
     [SerializeField] private bool _isActive = false;
+    [SerializeField] GameObject _hand;
     Color _color;
-    private void Start()
-    {
-        _color = gameObject.GetComponent<MeshRenderer>().material.color;
-    }
+   
     private void OnCollisionEnter(Collision collision)
     {
         if (_isActive)
@@ -26,14 +24,15 @@ public class Tomb : MonoBehaviour
     public void SetActive()
     {
         _isActive = true;
-        gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
+        _hand.SetActive(true);
     }
 
 
     public void Deactive()
     {
         _isActive = false;
-        gameObject.GetComponent<MeshRenderer>().material.color = _color;
+        _hand.SetActive(false);
+        
     }
 }
 
