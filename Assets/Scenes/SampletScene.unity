@@ -156,6 +156,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isActive: 0
+  _hand: {fileID: 0}
+  onHitSource: {fileID: 0}
 --- !u!65 &215089399
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1355,6 +1357,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isActive: 0
+  _hand: {fileID: 0}
+  onHitSource: {fileID: 0}
 --- !u!65 &556167437
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1860,6 +1864,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isActive: 0
+  _hand: {fileID: 0}
+  onHitSource: {fileID: 0}
 --- !u!65 &887101814
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2355,6 +2361,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isActive: 0
+  _hand: {fileID: 0}
+  onHitSource: {fileID: 0}
 --- !u!65 &1139816575
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2725,6 +2733,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isActive: 0
+  _hand: {fileID: 0}
+  onHitSource: {fileID: 0}
 --- !u!65 &1373463144
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3424,6 +3434,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isActive: 0
+  _hand: {fileID: 0}
+  onHitSource: {fileID: 0}
 --- !u!65 &1605979488
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4361,6 +4373,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isActive: 0
+  _hand: {fileID: 0}
+  onHitSource: {fileID: 0}
 --- !u!65 &1980883997
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4570,6 +4584,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isActive: 0
+  _hand: {fileID: 0}
+  onHitSource: {fileID: 0}
 --- !u!65 &2038741883
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4689,6 +4705,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isActive: 0
+  _hand: {fileID: 0}
+  onHitSource: {fileID: 0}
 --- !u!65 &2116903419
 BoxCollider:
   m_ObjectHideFlags: 0
