@@ -95,7 +95,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Shadow_Pattern:
-        m_Texture: {fileID: 2800000, guid: 7c13b14ea3dcac340b1dbdfba8763697, type: 3}
+        m_Texture: {fileID: 2800000, guid: e44553ad5dfb11a41bbf43b88011f8ea, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
@@ -154,7 +154,7 @@ Material:
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _SHADOWS_SOFT: 1
-    - _ShadowTiling: 75
+    - _ShadowTiling: 60
     - _Shadow_Dithering: 1.06
     - _Smoothness: 1
     - _SmoothnessTextureChannel: 0
@@ -174,7 +174,7 @@ Material:
     - _Edge_Color: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Horizon_Color: {r: 0.4525631, g: 0.7290994, b: 0.8490566, a: 0}
-    - _Main_Color: {r: 1, g: 1, b: 1, a: 0}
+    - _Main_Color: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 0}
     - _ShadowColor1: {r: 0, g: 0, b: 0, a: 0.42745098}
     - _ShadowColor2: {r: 0, g: 0, b: 0, a: 1}
     - _Shadow_Tiling: {r: 0, g: 0, b: 0, a: 0}

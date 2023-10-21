@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_EdgeDetection
-  m_Shader: {fileID: -6465566751694194690, guid: 0016b6b58bd8ced4b95320be0378eb94,
+  m_Name: M_Toon_Sky_Night
+  m_Shader: {fileID: -6465566751694194690, guid: fb9086b034b3cd14e9d8860e1d5fc1d5,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -17,10 +17,13 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: _Normal_Threshold
+  m_CustomRenderQueue: 2000
+  stringTagMap:
+    RenderType: Opaque
+  disabledShaderPasses:
+  - SHADOWCASTER
+  - DepthOnly
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -87,12 +90,11 @@ Material:
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
+    - _CastShadows: 0
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
-    - _Cull: 2
+    - _Cull: 1
     - _Cutoff: 0.5
-    - _Depth: 0
-    - _Depth_Threshold: 0.000001
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -101,10 +103,15 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
+    - _Horizon_Power: 0.2
     - _Metallic: 0
-    - _Normal_Threshold: 0.015
+    - _Noise_Mask_Edge: 0.83
+    - _Noise_Mask_Edge_1: 0.12
+    - _Noise_Mask_Edge_2: 0.001
+    - _Noise_Mask_Scale: 120
     - _OcclusionStrength: 1
     - _Parallax: 0.005
+    - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _Smoothness: 0.5
@@ -112,20 +119,23 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
+    - _Star_Density: 200
+    - _Star_Edge: 0.8
+    - _Star_Strength: 1
     - _Surface: 0
-    - _Thickness: 0.79
-    - _Threshold: 0.08
     - _WorkflowMode: 1
-    - _ZWrite: 1
-    - _t: 1
+    - _ZTest: 8
+    - _ZWrite: 0
+    - _ZWriteControl: 2
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0, g: 0, b: 0, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Resolution: {r: 1920, g: 1080, b: 0, a: 0}
+    - _Horizon_Color: {r: 0.3962264, g: 0.06541473, b: 0.21673077, a: 0}
+    - _Main_Color: {r: 0.11229975, g: 0.1021271, b: 0.254717, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &3388251159639538348
+--- !u!114 &5701215434835497009
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
