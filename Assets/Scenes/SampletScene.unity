@@ -1608,7 +1608,7 @@ MonoBehaviour:
   walkFOV: 40
   runFOV: 70
   target: {fileID: 1695569848}
-  maxVelocity: 20
+  maxVelocity: 10
 --- !u!4 &1682757384
 Transform:
   m_ObjectHideFlags: 0
