@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -30,7 +31,9 @@ public class PlayerController : MonoBehaviour
         collider.GetWorldPose(out position, out rotation);
 
        // wheelVisual.transform.position = position;
-        wheelVisual.transform.rotation = rotation;
+
+        
+        wheelVisual.transform.rotation = Quaternion.Euler(rotation.x,rotation.y, rotation.z);
     }
 
     private void Start()
@@ -96,8 +99,11 @@ public class PlayerController : MonoBehaviour
             rb.velocity = rb.velocity.normalized * maxSpeed;
         }
     }
+
+   
 }
 
+[Serializable]
 public class AxleInfo
 {
     public WheelCollider Wheel;
@@ -105,3 +111,5 @@ public class AxleInfo
     public bool motor;
     public bool steering;
 }
+
+

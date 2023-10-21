@@ -19,12 +19,6 @@ public class CameraFollow : MonoBehaviour
         Vector3 angles = transform.eulerAngles;
         x = angles.y;
         y = angles.x;
-
-        // Make the rigid body not change rotation
-        if (GetComponent<Rigidbody>())
-        {
-            GetComponent<Rigidbody>().freezeRotation = true;
-        }
     }
 
     void LateUpdate()
