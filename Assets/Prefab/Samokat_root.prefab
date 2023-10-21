@@ -129,6 +129,17 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  gazonLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  pilsLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  frontWheel: {fileID: 0}
+  backWheel: {fileID: 0}
+  ryl: {fileID: 0}
+  havePils: 0
+  wheelRotationSpeed: 360
 --- !u!65 &2700771156875433338
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -4,15 +4,36 @@ using UnityEngine;
 
 public class SimplePlayerContorller : MonoBehaviour
 {
-    public float acceleration = 5f;
+    public float speed = 5f;
+    public float gazonSpeed;
     public float steering = 5f;
     public float maxSpeed = 10f;
     public float jumpForce = 5f;
     public float boostMultiplier = 2f;
+    public float slopeTiltAngle = 15f;
     public LayerMask groundLayer;
+    public LayerMask gazonLayerMask;
+
+    public Transform raycast;
+    
+
+    public Transform frontWheel;
+    public Transform backWheel;
+    public Transform ryl;
 
     private Rigidbody rb;
-    private bool isGrounded;
+    public bool isGrounded;
+    public bool isGazon;
+    public bool isNitro;
+    public bool havePils;
+
+    public float currentAcceleration;
+
+
+    public float wheelRotationSpeed = 360f;
+
+  
+
 
     void Start()
     {
@@ -25,40 +46,95 @@ public class SimplePlayerContorller : MonoBehaviour
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
+
+        //currentAcceleration = speed;
+        if (Input.GetKey(KeyCode.LeftShift) && havePils)
+        {
+            isNitro = true;
+            havePils = false;
+
+        }
     }
 
 
     void FixedUpdate()
     {
-        isGrounded = Physics.Raycast(transform.position, -Vector3.up, 0.2f, groundLayer);
+        isGrounded = Physics.Raycast(raycast.position, -Vector3.up, 0.5f, groundLayer);
+        isGazon = Physics.Raycast(raycast.position, -Vector3.up, 0.5f, gazonLayerMask);
 
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
-        float currentAcceleration = acceleration;
-        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
-        {
-            currentAcceleration *= boostMultiplier;
-        }
+        ApplyVisualRotation(moveHorizontal);
 
-       
+
+        currentAcceleration = isGazon? gazonSpeed : speed;
+
+
+
+
 
         Vector3 forwardForce = transform.forward * moveVertical * currentAcceleration;
         float turnAngle = moveHorizontal * steering * Time.fixedDeltaTime;
         Quaternion turnRotation = Quaternion.Euler(0f, turnAngle, 0f);
 
-        if (isGrounded)
+        if (isNitro)
         {
-            rb.AddForce(forwardForce, ForceMode.Acceleration);
-            rb.MoveRotation(rb.rotation * turnRotation);
+            rb.AddForce(forwardForce * boostMultiplier, ForceMode.Force);
+            isNitro = false;
         }
 
-        // Limit the scooter's speed
-        if (rb.velocity.magnitude > maxSpeed)
+        RotateWheels(moveVertical);
+
+        rb.AddForce(forwardForce, ForceMode.Acceleration);
+        rb.MoveRotation(rb.rotation * turnRotation);
+
+
+        //if (rb.velocity.magnitude > maxSpeed)
+        //{
+        //    rb.velocity = rb.velocity.normalized * maxSpeed;
+        //}
+    }
+
+    private void ApplyVisualRotation(float rotation)
+    {
+        if(rotation!=0)
         {
-            rb.velocity = rb.velocity.normalized * maxSpeed;
+            frontWheel.transform.localRotation = Quaternion.Euler(0, rotation * 40,0 );
+            ryl.transform.localRotation = Quaternion.Euler(-90, rotation * 40,180 );
+        }
+        else
+        {
+            frontWheel.transform.localRotation = Quaternion.Euler(0, 0, 0);
+            ryl.transform.localRotation = Quaternion.Euler(-90, 0 , 180);
         }
     }
+
+    private void RotateWheels(float moveVertical)
+    {
+        float rotationAngle = moveVertical * wheelRotationSpeed * Time.deltaTime;
+        frontWheel.Rotate(Vector3.forward, rotationAngle);
+        backWheel.Rotate(Vector3.forward, rotationAngle);
+    }
+
+
+
+  
+
+    
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Pils"))
+        {
+            havePils = true;
+        }
+
+    }
+
+
+
+
 }
 
 
