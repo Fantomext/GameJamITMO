@@ -31,7 +31,8 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats: []
-    m_Colors: []
+    m_Colors:
+    - _Main_Color: {r: 0.6509434, g: 0.5875581, b: 0.43907973, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &3226461735975577703
 MonoBehaviour:
