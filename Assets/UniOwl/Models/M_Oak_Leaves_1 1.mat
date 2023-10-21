@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Toon_MainPlane
+  m_Name: M_Oak_Leaves_1 1
   m_Shader: {fileID: -6465566751694194690, guid: b88e81b4899f33448868f1a6c118d451,
     type: 3}
   m_Parent: {fileID: 2100000, guid: 3117d1d4c38c7bc46bc7acc129012c87, type: 2}
@@ -32,9 +32,9 @@ Material:
     m_Ints: []
     m_Floats: []
     m_Colors:
-    - _Main_Color: {r: 0.4848416, g: 0.7169812, b: 0.38216448, a: 1}
+    - _Main_Color: {r: 0.5372549, g: 0.5882353, b: 0.45098042, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &1445694124980335959
+--- !u!114 &7474161135981592128
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

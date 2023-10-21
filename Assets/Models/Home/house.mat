@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Toon_MainPlane
+  m_Name: house
   m_Shader: {fileID: -6465566751694194690, guid: b88e81b4899f33448868f1a6c118d451,
     type: 3}
   m_Parent: {fileID: 2100000, guid: 3117d1d4c38c7bc46bc7acc129012c87, type: 2}
@@ -28,13 +28,19 @@ Material:
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs: []
+    m_TexEnvs:
+    - _Main_Map:
+        m_Texture: {fileID: 2800000, guid: 355c5fd7809e0674ca4cd73907f40ac0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
-    m_Floats: []
+    m_Floats:
+    - _Edge1: 0
+    - _Edge2: 0
     m_Colors:
-    - _Main_Color: {r: 0.4848416, g: 0.7169812, b: 0.38216448, a: 1}
+    - _Main_Color: {r: 1, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &1445694124980335959
+--- !u!114 &2535625278489917321
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
