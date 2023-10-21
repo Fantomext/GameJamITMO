@@ -80,7 +80,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3161261038713196318}
-  - component: {fileID: 1277945514551685434}
   - component: {fileID: 7825650921330387764}
   - component: {fileID: 2700771156875433338}
   - component: {fileID: 9147606710213053098}
@@ -110,27 +109,6 @@ Transform:
   - {fileID: 2762381396572872119}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1277945514551685434
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 711918410702641199}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cd69843c2b35ed4fb1e9dcd42cb1a80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  centerMass: {fileID: 3161261038713196318}
-  maxMotorTorque: 400
-  maxSteeringAngle: 5
-  breakForce: 500
-  maxSpeed: 50
-  jumpForce: 0
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!114 &7825650921330387764
 MonoBehaviour:
   m_ObjectHideFlags: 0
