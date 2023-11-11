@@ -28,7 +28,7 @@ public class PlayerAttack : MonoBehaviour
         {
             Collider collider = hit.collider;
 
-            if (collider.attachedRigidbody.gameObject.TryGetComponent<EnemyHealth>(out var enemy))
+            if (collider.gameObject.TryGetComponent<EnemyHealth>(out var enemy))
             {
                 enemy.TakeDamage(1);
                 batAttackSource.Play();
