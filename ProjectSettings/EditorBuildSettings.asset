@@ -6,6 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+<<<<<<< HEAD
     path: Assets/Scenes/FantomextScene 1.unity
     guid: 379e50b10844bbd439def48f008eb525
+=======
+    path: Assets/Scenes/Menu.unity
+    guid: c45063c575d252a469e5dbf25d7bc89c
+  - enabled: 1
+    path: Assets/Scenes/FantomextScene.unity
+    guid: 5bcc7f327011f7f47a6bea34c9f239f0
+>>>>>>> ef858c10593c4be3ceb97065f2016c6f5b01ddc3
   m_configObjects: {}
